@@ -1,0 +1,54 @@
+<!DOCTYPE HTML> 
+<html> 
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <title>ESP32 Web Server</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Minimalist DAB+</h1>
+        <h2>volume: </h2> <p class="text1" id="volumeValue">55 %</p>
+        <div class="text2" id="serviceInfo"></div>
+        <input type="range" id="volumeSlider" min="0" max="100" value="0" step="5" class="slider"></input>
+
+        <div class="station-list" id="station-list"></div>
+
+        <form class="form-container">
+            <label class="radioButton" id="label1">station 1
+                <input type="radio" id="option1" name="radioGroup" value="option1">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radioButton" id="label2">station 2
+                <input type="radio" id="option2" name="radioGroup" value="option2">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radioButton" id="label3">station 3
+                <input type="radio" id="option3" name="radioGroup" value="option3">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radioButton" id="label4">station 4
+                <input type="radio" id="option4" name="radioGroup" value="option4">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radioButton" id="label5">station 5
+                <input type="radio" id="option5" name="radioGroup" value="option5">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radioButton" id="label6">station 6
+                <input type="radio" id="option6" name="radioGroup" value="option6">
+                <span class="checkmark"></span>
+            </label>
+
+        </form>
+                  
+		<button class="button-1" id="reset-wifi">config wifi</button>
+		<button class="button-2" id="scan">scan</button>
+
+        <div id="scanInfo"></div>
+
+        <div class="spacer"></div>
+
+        <script src="index.js"></script>
+    </body>
+</html>

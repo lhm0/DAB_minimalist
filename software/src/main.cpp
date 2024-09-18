@@ -197,20 +197,20 @@ void IRAM_ATTR handleInterruptA() {
       if (v_value<15) increment = 10;
       if (currentA==HIGH) {            // A change: 1 => 0
         if (digitalRead(KY040_DT)==LOW) {
-          v_value=v_value-increment;                       // increase
-          if (v_value>=63) v_value=63;
+          v_value=v_value-increment;                       
+          if (v_value<=0) v_value=0;
         }
         else {
-          v_value=v_value+increment;                        // decrease
-          if (v_value<=0) v_value=0; 
+          v_value=v_value+increment;                        
+          if (v_value>=63) v_value=63;
         }
       } else {                        // A change: 0 => 1
         if (digitalRead(KY040_DT)==LOW) {
-          v_value=v_value+increment;                        // decrease
-          if (v_value<=0) v_value=0;
-        } else {
-          v_value=v_value-increment;                        // increase
+          v_value=v_value+increment;                        
           if (v_value>=63) v_value=63;
+        } else {
+          v_value=v_value-increment;                        
+          if (v_value<=0) v_value=0;
         }
       }
       lastA = currentA;   

@@ -6,6 +6,8 @@
 // you may not use this software for commercial purposes 
 // =========================================================================================================================================
 
+//#define digitalVolume                // If "digitalVolume" is defined, the volume control will be active
+
 #include <Arduino.h>
 #include <SPI.h>
 #include <DABShield.h>
@@ -96,10 +98,15 @@ void setup() {
   wi.begin(ssid, password); 
 
   // restore volume and station settings
-  if (LittleFS.exists("/volume.txt")) v_value = readFile(LittleFS, "/volume.txt").toInt();
-  else v_value = 32;
-  Serial.println("set volume to "+ (String)v_value);
-  my_DAB.vol((uint8_t)v_value);
+  #ifdef digitalVolume
+    if (LittleFS.exists("/volume.txt")) v_value = readFile(LittleFS, "/volume.txt").toInt();
+    else v_value = 32;
+    Serial.println("set volume to "+ (String)v_value);
+    my_DAB.vol((uint8_t)v_value);
+  #else
+    v_value = 63;
+    my_DAB.vol((uint8_t)v_value);
+  #endif
 
   if (LittleFS.exists("/station.txt")) activePreset = readFile(LittleFS, "/station.txt").toInt();
   activeStation = my_DAB.presets[activePreset-1].number;
@@ -122,15 +129,17 @@ void loop() {
     Serial.println("save preset: "+(String)button);
   }
 
-  // check volume setting
-  if (lastVol!=v_value) {
-    lastVol = v_value;
-    my_DAB.vol((uint8_t)v_value);
+  #ifdef digitalVolume
+    // check volume setting
+    if (lastVol!=v_value) {
+      lastVol = v_value;
+      my_DAB.vol((uint8_t)v_value);
     
-    char buffer[10];  
-    sprintf(buffer, "%d", v_value);
-    writeFile(LittleFS, "/volume.txt", buffer);
-  }
+      char buffer[10];  
+      sprintf(buffer, "%d", v_value);
+      writeFile(LittleFS, "/volume.txt", buffer);
+    }
+  #endif
 
   // service web server and DAB radio
   my_DAB.task();

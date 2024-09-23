@@ -231,7 +231,7 @@ document.querySelectorAll('.radioButton').forEach(function(label) {
 });
 
 let clickStartTime;
-const longPressThreshold = 500; // time in milliseconds for long click
+const longPressThreshold = 1500; // time in milliseconds for long click
 
 function handleMouseDown(element) {
     clickStartTime = new Date().getTime(); // save tiem of click start

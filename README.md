@@ -9,8 +9,8 @@ An easy to use DAB+ radio for the visually impaired. The radio is configured onc
 
 
 <p align="center"> 
-<a href="https://youtu.be/z104PPDUCuw?si=FKLufJ06-1T4-yEl" target="_blank">
-  <img src="images/yt1.jpeg" style="display: inline-block; margin: 0px; max-width: 600px">
+<a href="https://youtu.be/GW8XSlcxrfo" target="_blank">
+  <img src="images/yt2.jpeg" style="display: inline-block; margin: 0px; max-width: 600px">
 </a>
 </p> 
 

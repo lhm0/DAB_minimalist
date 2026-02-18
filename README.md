@@ -14,6 +14,18 @@ An easy to use DAB+ radio for the visually impaired. The radio is configured onc
 </a>
 </p> 
 
+## Part of an Accessible Devices Collection
+
+This repository is part of a small collection of **minimalistic, accessibility-focused devices for visually impaired users**. All projects follow a similar philosophy: simple operation, tactile or acoustic feedback, and a strong focus on usability and low power consumption.
+
+The currently available devices in this collection are:
+
+- **[DAB+ Radio](https://github.com/lhm0/DAB_minimalist)** – This project: a minimalist, easy-to-use DAB+ radio  
+- **[Talking Clock](https://github.com/lhm0/talking_clock)** – A clock that announces the time acoustically  
+- **[Accessible IR Remote Control](https://github.com/lhm0/accessible_ir_remote)** – A tactile, low-power TV remote control  
+
+All projects are designed to be practical, easy to reproduce, and suitable for everyday use by visually impaired users.
+
 ## 1. The idea
 The radio was developed for a elderly visually impaired lady. The idea was to make the device as easy to use as possible. The preferred radio stations were to be selected once from the large number of DAB+ stations and assigned to 6 station buttons. In addition to these buttons, the on/off switch and the volume control should also be easy to reach with large buttons. A display has been omitted.
 
